@@ -1,3 +1,5 @@
+## Endpoints
+
 I implemented API for the task manager based on HTTP server with endpounts:
   * POST start/{task}
   * POST cancel?id={task_id}
@@ -6,6 +8,8 @@ I implemented API for the task manager based on HTTP server with endpounts:
 
 I didn't have much time to implement pause/resume mechanism but have ideas on
 how I would do it. 
+
+## Implementation details
 
 The task manager supports 3 concrurrently running tasks and queues all new
 tasks unless the queue limit is reached. When a running task completed, next
@@ -33,11 +37,15 @@ Max "cache" size is 1000.
 All these parameters and more can be configurable through cli args but for 
 simplisity those are constant.
 
+## Simulations
+
 There are two long running operations defined:
   * `power_sim(a, b, delay_seconds = 5)` which sleeps on each multiplication
     for `delay_seconds` time and returns the result
   * `failing_sim(a, delay_seconds = 5)` which sleeps on each multiplication
     for `delay_seconds` time and raises an exception in the end
+
+## How to run 
 
 To run the task manager:
 ```
